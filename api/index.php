@@ -2,7 +2,6 @@
 
 define('BASE', '/');
 
-
 header('Content-Type: application/json'); 
 
 /* Receive url components */
@@ -47,10 +46,10 @@ switch ($request) {
     	else{
 
     		$response = [
-    						'status' => 'fail',
+				'status' => 'fail',
 
-    						'description' => 'Invalid Category'
-    					];
+				'description' => 'Invalid Category'
+			];
 
     	}
 
@@ -69,10 +68,10 @@ switch ($request) {
         http_response_code(404);
 
 		$response = [
-						'status' => 'fail',
+				'status' => 'fail',
 
-						'description' => 'Invalid Category'
-					];
+				'description' => 'Invalid Category'
+			];
         break;
 }
 
