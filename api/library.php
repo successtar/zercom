@@ -13,7 +13,7 @@ class Library{
 
 		/* Connect to database */
 
-    	$this->myquery = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB) 
+    		$this->myquery = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB) 
 
     					or die('{"status": "error", "message": "Connection to database fail"}');
   	}
@@ -30,20 +30,20 @@ class Library{
 
 		$query = mysqli_query($this->myquery, $sql) or die('{"status": "error", "message": "Sql Error"}');
 
-        /* Extract result */
+		/* Extract result */
 
-        foreach ($query as $row) {
+		foreach ($query as $row) {
 
-        	$result[] = $row;
-        }
+        		$result[] = $row;
+		}
 
-    	return  [ 
-					'status' => 'success',
+	    	return  [ 
+				'status' => 'success',
 
-					'description' => (empty($result) ? 'Empty Record' : 'Record fetched Successfully'),
+				'description' => (empty($result) ? 'Empty Record' : 'Record fetched Successfully'),
 
-					'data' => $result
-				];
+				'data' => $result
+			];
 	}
 
 	public function list_by_cat($param){
@@ -62,20 +62,20 @@ class Library{
 
 		$query = mysqli_query($this->myquery, $sql) or die('{"status": "error", "message": "Sql Error"}');
 
-        /* Extract result */
+		/* Extract result */
 
-        foreach ($query as $row) {
+		foreach ($query as $row) {
 
-        	$result[] = $row;
-        }
+			$result[] = $row;
+		}
 
-    	return  [ 
-					'status' => 'success',
+	    	return  [ 
+				'status' => 'success',
 
-					'description' => (empty($result) ? 'Empty Record' : 'Record fetched Successfully'),
+				'description' => (empty($result) ? 'Empty Record' : 'Record fetched Successfully'),
 
-					'data' => $result
-				];
+				'data' => $result
+			];
 
 	}
 
@@ -93,22 +93,22 @@ class Library{
 
 		$query = mysqli_query($this->myquery, $sql) or die('{"status": "error", "message": "Sql Error"}');
 
-        /* Extract result */
+		/* Extract result */
 
-        foreach ($query as $row) {
+		foreach ($query as $row) {
 
-        	$result[] = [
-        					$row['category_name'] => $row['counter']
-        				];
-        }
-
-    	return  [ 
-					'status' => 'success',
-
-					'description' => (empty($result) ? 'Empty Record' : 'Students number in each category fetched'),
-
-					'data' => $result
+			$result[] = [
+					$row['category_name'] => $row['counter']
 				];
+		}
+
+	    	return  [ 
+				'status' => 'success',
+
+				'description' => (empty($result) ? 'Empty Record' : 'Students number in each category fetched'),
+
+				'data' => $result
+			];
 
 	}
 }
