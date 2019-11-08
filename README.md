@@ -1,4 +1,4 @@
-# zircom
+# zercom
 
 * The sql file for the project is examination.sql which require creating Mysql database with the name examination
 
